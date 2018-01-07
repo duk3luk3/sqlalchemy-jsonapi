@@ -1043,7 +1043,7 @@ class JSONAPI(object):
                         raise BadRequestError(
                             '{} must be an array'.format(key))
                     for item in data_rel:
-                        if not {'type', 'id'} in set(item.keys()):
+                        if not {'type', 'id'} <= set(item.keys()):
                             raise BadRequestError(
                                 '{} must have type and id keys'.format(key))
                         # pragma: no cover
